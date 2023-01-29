@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="common.css" type="text/css" />
+    <title>Document</title>
+    <style type="text/css">
+        .charts{
+            width: 80%;
+            margin: 20px auto;
+        }
+        .chart{
+            margin-top: 20px;
+            border-bottom: 1px solid gray;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul class="links-ic flex-center">
+                <li class="link flex-center">
+                    <a href="#" class="flex-center"><ion-icon name="logo-facebook" style="color:#5C9FF5;"></ion-icon></a></li><li class="link flex-center">
+                    <a href="#"><ion-icon style="color:#15AFF4;" name="logo-twitter"></ion-icon></a></li><li class="link flex-center">
+                    <a href="#"><ion-icon style="color:#E43651;" name="logo-pinterest"></ion-icon></a></li><li class="link flex-center">
+                    <a href="#"><ion-icon style="color:#FF0000;" name="logo-youtube"></ion-icon></a></li><li class="link flex-center">
+                    <a href="#"><ion-icon style="color:#0077B5;" name="logo-linkedin"></ion-icon></a></li><li class="link flex-center">
+                    <a href="#"><ion-icon style="color:#F14950;" name="logo-instagram"></ion-icon></a>
+                </li>
+            </ul>
+            <div class="flex-center">
+                
+            <span class="flex-center">More<ion-icon name="chevron-down-outline"></ion-icon></span>
+            <ul class="links links2 flex-center">
+                <li class="link flex-center">
+                    <a href="#" class="flex-center"><ion-icon name="call-outline"></ion-icon><span>+26123458697</span></a>
+                </li>
+                <li class="link">
+                    <a href="#" class="flex-center"><ion-icon name="phone-portrait-outline"></ion-icon><span>+88012345678,+8801234567893</span></a>
+                </li>
+                <li class="link">
+                    <a href="#" class="flex-center"><ion-icon name="time-outline"></ion-icon><span>9:30am/9:30pm</span></a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        <nav class="nav nav2 flex-center">
+            <img src="./logo_1.png" alt="logo" class="logo" />
+            <div>
+                
+            <span class="flex-center"><ion-icon name="menu-outline"></ion-icon></span>
+            <div class="links flex-center">
+                <a href="#" class="active">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">links</a>
+                <a href="#">About</a>
+                <a href="#">links</a>
+                <a href="" class="button">sign up</a>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <hr />
+    
+    <section class="charts">
+        <h1>last week data from today</h1>
+        <div class="chart">
+            <h2>visited</h2>
+            <canvas id="acquisitions"></canvas>
+            <button class="danger">clear</button>
+        </div>
+        <div class="chart">
+            <h2>Users</h2>
+            <canvas id="acquisitions2"></canvas>
+            <button class="danger">clear</button>
+        </div>
+        <div class="chart">
+            <h2>Courses sells</h2>
+            <canvas id="acquisitions3"></canvas>
+            <button class="danger">clear</button>
+        </div>
+    </section>
+
+    <hr />
+    <footer>
+        <div class="multi-links">
+            <div class="links">
+                <p>Links</p>
+                <a href="#">link of foo</a>
+                <a href="#">link of foo</a>
+                <a href="#">link of</a>
+                <a href="#">link of fot</a>
+            </div>
+            <div class="links">
+                <p>Links</p>
+                <a href="#">link of foo</a>
+                <a href="#">link of foo</a>
+                <a href="#">link of</a>
+                <a href="#">link of fot</a>
+            </div>
+            <div class="links">
+                <p>Links</p>
+                <a href="#">link of foo</a>
+                <a href="#">link of foo</a>
+                <a href="#">link of</a>
+                <a href="#">link of fot</a>
+            </div>
+            <div class="links">
+                <p>Links</p>
+                <a href="#">link of foo</a>
+                <a href="#">link of foo</a>
+                <a href="#">link of</a>
+                <a href="#">link of fot</a>
+            </div>
+            <div class="links">
+                <p>Links</p>
+                <a href="#">link of foo</a>
+                <a href="#">link of foo</a>
+                <a href="#">link of</a>
+                <a href="#">link of fot</a>
+            </div>
+        </div>
+        <p>&copy;2023 <span class="anim-text">Jisan</span> project ,sponsored by <span class="anim-text">risosi</span>.com</p>
+    </footer>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.umd.min.js"></script>
+    
+    <script>
+        (async function() {
+  const data = [
+    { year: 2010, count: 10 },
+    { year: 2011, count: 20 },
+    { year: 2012, count: 15 },
+    { year: 2013, count: 25 },
+    { year: 2014, count: 22 },
+    { year: 2015, count: 30 },
+    { year: 2016, count: 28 },
+  ];
+
+  new Chart(
+    document.getElementById('acquisitions'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Acquisitions by year',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+    }
+  );
+  new Chart(
+    document.getElementById('acquisitions2'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Acquisitions by year',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+    }
+  );
+  new Chart(
+    document.getElementById('acquisitions3'),
+    {
+      type: 'line',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Acquisitions by year',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+    }
+  );
+})();
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>!function(){var n=document.createElement("script");n.src="//cdn.jsdelivr.net/npm/eruda",document.body.appendChild(n),n.onload=function(){eruda.init()}}()</script>
+    <script>
+    window.addEventListener("pageshow", function (event) {
+        var historyTraversal = event.persisted ||
+        (typeof window.performance != "undefined" &&
+            window.performance.navigation.type === 2);
+        if (historyTraversal) {
+            // Handle page restore.
+            window.location.reload();
+        }
+    });
+        document.querySelectorAll('.rating-star').forEach((e)=>{
+            let v = parseInt(e.getAttribute('-data-rating'))
+            for (let i = 1; i <= 5; i++) {
+                if (i<=v) {
+                e.innerHTML += '<ion-icon name="star"></ion-icon>'
+                }
+                else{
+                    e.innerHTML += '<ion-icon name="star" class="off"></ion-icon>'
+                }
+            }
+        })
+        function dangerAlert(massage,time) {
+    const danger = document.createElement('div');
+    danger.classList.add('alert-danger');
+    danger.innerText=massage;
+    document.body.appendChild(danger);
+    const tm2 = setTimeout(()=>{
+            danger.classList.add('alert-show');
+            clearTimeout(tm2)
+        },500);
+    
+    const timeout = setTimeout(function() {
+        danger.classList.add('danger-hide');
+        const tm3 = setTimeout(()=>{
+            document.body.removeChild(danger);
+            clearTimeout(tm3)
+        },500);
+        clearTimeout(timeout)
+    }, time);
+}
+
+    </script>
+
+</body>
+</html>
